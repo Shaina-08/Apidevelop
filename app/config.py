@@ -14,7 +14,7 @@ class Settings:
     algorithm: str = os.getenv("ALGORITHM")
     access_token_expire_minutes: int = os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES")
     ALLOWED_HOSTS: list =ALLOWED_HOSTS.split(",")
-    
+    SQLALCHEMY_DATABASE_URL = f"postgresql://{database_username}:{database_password}@{database_hostname}:{database_port}/{database_name}"
     class Config:
         env_file = ".env"
 settings = Settings()
